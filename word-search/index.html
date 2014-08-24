@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html ng-app="word-search">
+	<head>		
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title></title>
+
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+	<body>
+
+		<div class="search" ng-controller="SearchController as search">
+
+			<div class="search-field">				
+				<input type="text" ng-model="search.searchText" autofocus maxlength="20" />
+				<div class="info">also accepts "starts with [insert letters here]" and "ends with [insert letters here]"</div>
+			</div>
+
+			<div class="results">
+				<div ng-repeat="word in search.getResults()">
+					{{word}}
+				</div>
+			</div>
+
+			<div class="footer">
+				word list courtesy of <a href="http://www-01.sil.org/linguistics/wordlists/english/" target="_blank">http://www-01.sil.org/linguistics/wordlists/english/</a>
+			</div>
+		</div>
+
+		<script src="js/vendor.js"></script>
+		<script src="js/client.js"></script>
+
+	</body>
+</html>
